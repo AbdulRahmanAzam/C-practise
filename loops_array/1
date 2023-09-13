@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main(){
+    int n,c=0, i=0;
+    
+    printf("Enter positive Integer ");
+    scanf("%d", &n);
+    
+        
+    while(c < n){
+        c = i * i;
+        i = i+1;
+        
+        // printf("%d\n", c); //open it when showing sir
+        // printf("\n%d == ", i);
+        
+    }//end while
+    
+    if(c > n){
+        printf("not perfect square");
+    }
+    else if(c=n){
+        i= i-1;
+        printf("perfect square of = %d", i);
+        
+    }
+    // printf("%d",c); //open it when showing sir
+    // printf("%d", i);
+    
+}//end main
