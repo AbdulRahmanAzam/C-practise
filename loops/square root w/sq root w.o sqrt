@@ -1,0 +1,27 @@
+#include <stdio.h> 
+  
+ int main(){ 
+     int n,c=0, i=0; 
+  
+     printf("Enter positive Integer "); 
+     scanf("%d", &n); 
+  
+  
+     while(c < n){ 
+         i = i+1; 
+         c = i*i; 
+  
+     }//end while 
+  
+     if(c > n){ 
+         printf("%d is not perfect square ", n); 
+        float a = (i + (((float)n) / i) ) / 2;
+         printf("\n square root is %.2f", a);
+         
+     } 
+     else if(c=n){ 
+         printf("perfect square of = %d", i); 
+  
+     }
+  
+ }//end main
