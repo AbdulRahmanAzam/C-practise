@@ -1,0 +1,19 @@
+#include<stdio.h>
+
+int main() {
+    int i=0, j =1, n =3,m =1;
+    printf("Enter column then row ");
+    scanf("%d",&n);
+    m = n;
+    for(i=1; i<= n; i++){
+        
+        for(j=1; j<=n; j++){
+            if( j>= m){
+                printf("*");
+            }
+            else printf(" ");
+        }
+        m=m-1;
+        printf("\n");
+    }
+  }//end main
