@@ -1,0 +1,16 @@
+date : 17-Sep-2023
+#include <stdio.h>
+
+int main() {
+    int n=0,i=0, j=0 ,k=0;
+    printf("Enter any positive Integer ");
+    scanf("%d", &n);
+    
+    for(k =0;n >= 1; k++ ){
+        i = n % 10;
+        n = n/10;
+        j = j + i;
+        
+    }
+    printf("%d", j);
+}//end main
