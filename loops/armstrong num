@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+    int n=1,i=1 ,k=1, a =0,b=0;
+    printf("Enter the Integer ");
+    scanf("%d", &n);
+
+        k = n;
+        for (i=1 ; n > 0 ; i++){
+            b = pow(n%10,3);
+            n = n /10;
+            a = a + b;
+            
+        }//end i loop
+        if(a == k){
+                printf("It is an armstrong number = %d  ",k);
+            }
+            else{
+                printf("It is not an armstrong number", k);
+            }
+}//end main
