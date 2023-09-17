@@ -1,0 +1,35 @@
+//below is written in easy way
+//after end main wrong method is written
+#include<stdio.h>
+
+int main() {
+    int i=0, j =0, n =3;
+    printf("Enter any Odd number ");
+    scanf("%d", &n);
+    
+    for(i=1;i<=n;i++){
+        for(j=1;j<=n;j++){
+            if(i== (n+1)/2 || j== (n+1)/2)
+                printf("*");
+            else
+                printf("1");
+        }
+        printf("\n");
+    }
+}//end main
+
+//BELOW IS WRONG WAY OF SAME THING
+//  for(j=1;j<=n;j++){
+//         for(i = 1; i<=n; i++){
+//             if(j == (n+1)/2){ //it works in the middle row
+//                 printf("*");
+//             }
+//             else if(i == (n+1)/2){//it works in the center of every row and print star
+//                 printf("*");
+//             }//end if
+//             else{//it is used as space and works when none of the above matches
+//                 printf("1");
+//             }
+//         }//end i loop
+//         printf("\n");
+//     }//end j loop
