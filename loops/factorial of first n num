@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    int n=0,i=1, j=1 ,k=1;
+    printf("Enter any positive Integer ");
+    scanf("%d", &n);
+    
+    for (i=1 ; i<= n; i++){
+        j = j * i;
+        printf("Factorial of %d = %d\n", i , j );
+    
+    }//end i forloop
+}//end main
