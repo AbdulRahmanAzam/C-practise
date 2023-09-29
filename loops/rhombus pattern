@@ -1,0 +1,27 @@
+## Discription: 
+n = 4
+   ****
+  ****
+ ****
+****
+
+# Code:
+#include <stdio.h>
+
+int main() {
+    int i, j,k, a, n;
+    printf(" n = ");
+    scanf("%d", &n);
+    
+    for(i =1; i <= n; i++){
+        for(j =1; j <= n-i ; j++){
+            printf(" ");
+        }//end j loop
+        for(k= 1; k<=n ; k++){
+            printf("*");
+        }//end k loop  
+        printf("\n");
+    }// end i loop
+
+    return 0;
+}//end main
