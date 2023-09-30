@@ -1,0 +1,24 @@
+## Discription:
+nCr = n! / r! x (n-r)!
+
+## Code:
+#include <stdio.h>
+int fac(int a){
+    int b =1;
+    for(int i=a; i>0;i--){
+        b = b*i;
+    }//end loop
+    return b;
+}//end void
+
+int main() {
+    int i,j,a=1,b,r,n=0;
+    printf("Enter number n ");
+    scanf("%d",&n);
+    printf("Enter number r ");
+    scanf("%d", &r);
+    
+    int com = fac(n)/(fac(r)*fac(n-r));
+    printf("%d",com);
+    return 0;
+}//end main
