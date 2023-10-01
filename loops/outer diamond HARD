@@ -1,0 +1,33 @@
+## Description:
+Enter any number 5
+*********
+**** ****
+***   ***
+**     **
+*       *
+**     **
+***   ***
+**** ****
+*********
+
+## Code:
+#include <stdio.h>
+int main() {
+    int i,j,k,a,b,c,n;
+    printf("Enter any number ");
+    scanf("%d",&n);
+    a= n*2-1;
+    b=n;
+    c=n;
+    for(i=1;i<=a; i++){
+        for(j=1;j<=a; j++){
+            if(j<=b && i<=n || j>=c && i<=n || j<=b && i>=n || j>=c && i>=n){
+                printf("*");
+            }else
+                printf(" ");
+        }//end j loop
+        if(i<n){ c++; b--; } else if(i>=n){ c--; b++; }
+        printf("\n");
+    }//end i loop
+    return 0;
+}//end main
