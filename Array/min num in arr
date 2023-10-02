@@ -1,0 +1,29 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int j,a,b,c,i;
+    int prod=1;
+    
+    printf("Enter length of array = ");
+    scanf("%d",&a);
+    int arr[a];
+    printf("Now enter all the numbers \n");
+    for(i =0; i< a; i++){
+        scanf("%d", &arr[i]);
+    }
+    int min = arr[0];
+    for(int k =0; k< a; k++){
+        if(min > arr[k]){
+            min = arr[k];
+        }
+    }//end for loop
+    printf("the max number is = %d", min);
+    return 0;
+}//end main
+
+
+
+
+
+
