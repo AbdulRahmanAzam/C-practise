@@ -1,0 +1,27 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int j,a,b,c,i,n;
+    int prod=1;
+    
+    int arr[5] = {2,6,7,5,4};
+    int count =0;
+    printf("Enter number x = ");
+    scanf("%d ", &n);
+    
+    for(i=0; i<5; i++){
+        if(arr[i]> n){
+            count = count +1;
+        }
+    }
+    printf("The numbers greater than %d are = %d ",n, count);
+    
+    return 0;
+}//end main
+
+
+
+
+
+
