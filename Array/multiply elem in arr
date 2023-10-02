@@ -1,0 +1,26 @@
+## Discription:
+Enter length of array = 2
+Now enter all the numbers 
+3
+5
+The product is = 15
+
+#include <stdio.h>
+
+int main() {
+    int j,a,b,c,i;
+    int prod=1;
+    
+    printf("Enter length of array = ");
+    scanf("%d",&a);
+    int arr[a];
+    printf("Now enter all the numbers \n");
+    for(i =0; i< a; i++){
+        scanf("%d", &arr[i]);
+    }
+    for(j=0; j<a;j++){
+        prod = prod * arr[j];
+    }
+    printf("The product is = %d",prod );
+    return 0;
+}
