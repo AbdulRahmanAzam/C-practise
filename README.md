@@ -16,4 +16,11 @@ Dear Ms
 Richardson
 
 This letter is a confirmation of your request for a ticket to the Annual Fireman’s Ball. Our corporation is happy to provide the ticket to you at no cost.
-As
+As you will note from the tickets, the Ball is being held November 25th at the Norseman inn and will begin propmtly at 9p.m. The famouos band, Cappy's Capers, will provide an entertaining evening of dancing and comedy.
+
+Thank you for allowing our comppany to be of service to you.
+
+Warmest Regards
+
+
+Abdul Rahman Azam.
