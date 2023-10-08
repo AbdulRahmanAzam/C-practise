@@ -1,23 +1,23 @@
-// Online C compiler to run C program online
+## description:
+39 = 3*9 = 27 = 2*7 = 14 = 1*4 = 4
+999 = 9*9*9 = 729 = 7*2*9 = 126 = 1*2*6 = 12 = 1*2 = 2
 #include <stdio.h>
 
-int main() {
-    int i, j , k, n,a=1,b,c=10;;
-    printf("Enter any number");
-    scanf("%d", &n);
-    
-    for(i = 1; n >0 ; i++){
-        a=1;
-       for(j =1; c%10 >= 10 ; j++){
-            b = n % 10;
-        // printf("%d", b);
-        n = n /10;
-        a = a*b;
-        // printf("%d", n);
-       }
-       c = a;
-        
+int main(){
+    int i,j,k,a,b=0,c,s=0,n;
+    printf("Enter number ");
+    scanf("%d",&n);
+    b =n;
+    for(j=0;b/10>0;j++){
+        n = b;
+        s=1;
+        for(i=1;n>0;i++){
+            a = n %10;
+            s = s * a;
+            n = n /10;
+        }
+        b = s;
     }
+    printf("%d",s);
     
-    printf("a=%d, b =%d, c=%d", a,b,c);
 }//end main
