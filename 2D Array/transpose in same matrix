@@ -1,0 +1,38 @@
+## Discription : transpose without using another matrix, do in same matrix
+input : 1 2 3 
+        4 5 6
+        7 8 9
+
+output: 1 4 7
+        2 5 8 
+        3 6 9
+#include <stdio.h>
+int main(){
+    int a=0,b=0,c,sum,i,j,k,max,r;
+    int arr[100][100];
+    int brr[4][4] = {
+        {1,2,3,4},
+        {5,6,7,8},
+        {9,10,11,12}, 
+    };
+
+    r=3;
+    c=3;
+
+    for(i=0;i<c;i++){
+        for(j=i;j<r;j++){
+            if(i!=j){
+                a= brr[i][j];
+                brr[i][j] = brr[j][i];    
+                brr[j][i] = a;
+            }
+        }//end j loop
+        printf("\n");
+    }
+    for(int k=0;k<c;k++){
+        for(int l=0;l<r;l++){
+            printf("%d ", brr[k][l]); //printing stored matrix which is transpose
+        }
+        printf("\n");
+    }
+}//end main
