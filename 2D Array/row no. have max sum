@@ -1,0 +1,22 @@
+## Discription : row number having maximum sum in a given matrix
+#include <stdio.h>
+int main(){
+    int a=0,b=0,c,sum,i,j,max;
+    int arr[3][4] = {
+        {9,3,4,2,},
+        {6,12,5,2},
+        {4,5,7,4},
+    };
+    
+    for(i=0;i<3;i++){
+        sum = 0;
+        for(j=0;j<4;j++){
+            sum += arr[i][j];
+        }//end j loop
+        if(a < sum){
+         b = i+1;   
+         a= sum;
+        }
+    }
+    printf("%d",b);
+}//end main
