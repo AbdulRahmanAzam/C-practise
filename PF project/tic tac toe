@@ -1,6 +1,6 @@
 // Online C compiler to run C program online
 #include<stdio.h>
-#include <conio.h> 
+// #include<conio.h> 
 void structure(int arr[3][3]){
     int a=1,b,c;
     for(int i =0; i<3; i++){
@@ -34,8 +34,6 @@ int main() {
     int inp=0;
     structure(arr);
     output(arr);
-            
-            
             // if(a<9){
             //     for(){
             //         for(){
@@ -87,11 +85,16 @@ int main() {
                 printf("Enter the correct value");
                 
                 }
-                if(arr[i][j]!= 'O' || arr[i][j]!= 'X'){
-                        arr[i][j] = 'O';
-                }
-                clrscr();
+                if(arr[i][j]== 'O' || arr[i][j]== 'X'){
+                        printf("Already assigned");
+                }else arr[i][j] = 'O';
+                system("clear");
                 output(arr);
+                for(i=0;i<3;i++){
+                    for(j=0;j<3;j++){
+                        random
+                    }
+                }
             }
             
         
@@ -99,3 +102,4 @@ int main() {
 
     return 0;
 }
+
