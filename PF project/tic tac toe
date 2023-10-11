@@ -1,0 +1,79 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+void structure(int arr[3][3]){
+    int a=1,b,c;
+    for(int i =0; i<3; i++){
+        for(int j =0; j<3;j++){
+            arr[i][j] = a++;
+        }
+    }
+}
+void output(int arr[3][3]){
+    int a=1,b,c;
+    for(int i =0; i<3; i++){
+        for(int j =0; j<3;j++){
+            printf(" %d ",arr[i][j]);
+            if(j<2){
+                printf("|");
+            }
+        }
+        printf("\n");
+        for(int j =0; j<3;j++){
+            if(i<2)
+            printf(" -- ");
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int a,b,c,i,j,k;
+    int arr[3][3];
+    int brr[3][3];
+    
+    structure(brr);
+    output(brr);
+    for(i=0;i<3;i++){
+        for(j=0;j<3;j++){
+            printf("Enter position ");
+            scanf("%d ",a);
+            while(a>0 || a<9){
+                switch(a):
+            case 1:
+            
+            break;
+            case 2:
+            
+            break;
+            case 3:
+            
+            break;
+            case 4:
+            
+            break;
+            case 5:
+            
+            break;
+            case 6:
+            
+            break;
+            case 7:
+            
+            break;
+            case 8:
+            
+            break;
+            case 9:
+            
+            break;
+            default:
+            printf("Enter the correct value");
+            scanf("%d");
+            scanf("%d",&arr[a][b]);
+            }
+            
+        }
+    }
+
+    return 0;
+}
