@@ -1,0 +1,28 @@
+
+#include <stdio.h>
+
+int main() {
+    float a,c,i,j,k,n;
+    int b=0;
+    printf("Enter ");
+    scanf("%f",&n);
+    
+    scanf("%f",&a);
+    for(i=0;n>1||n<-1;i++){
+        if(n>1){
+            if(a<1){
+                n = n+a;
+            }else{
+                n = n-a;
+            }
+        }else{
+            n=n+a;
+        }
+        b++;
+    }
+    if(a<0){
+        printf("%d",-b);
+    }else{
+        printf("%d",b);
+    }
+}
