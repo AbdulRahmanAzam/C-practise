@@ -16,21 +16,21 @@ int main(){
     int br = 2;
     int bc = 4;
     int crr[3][4];
-    if(ac!=br){
+    if(ac==br){
         printf("Enter correct order of matrix");
-        return false;
-    }
-    for(i=0;i<ar;i++){
-        for(j=0;j<bc;j++){
-            for(k=0;k<ac;k++){
-                crr[i][j] +=  arr[i][k]* brr[k][j];
+        for(i=0;i<ar;i++){
+            for(j=0;j<bc;j++){
+                for(k=0;k<ac;k++){
+                    crr[i][j] +=  arr[i][k]* brr[k][j];
+                }
             }
         }
-    }
-    for(i=0;i<ar;i++){//printing the resultant array
-        for(j=0;j<bc;j++){
-            printf("%d ",crr[i][j]);
+        for(i=0;i<ar;i++){//printing the resultant array
+            for(j=0;j<bc;j++){
+                printf("%d ",crr[i][j]);
+            }
+            printf("\n");
         }
-        printf("\n");
-    }
+    }else printf("Enter correct value");
+    
 }//end main 
