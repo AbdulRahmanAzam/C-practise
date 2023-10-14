@@ -94,12 +94,10 @@ int main() {
                         //checking column
                         if(brr[k][l]==brr[i][j] && k!=i && l==j && brr[k][l]!=0){
                             flag = false;
-                            // printf("%d ",brr[k][l]);
                         }
                         //checking row
                         if(brr[k][l]==brr[i][j] && k==i && l!=j && brr[k][l]!=0){
                             flag = false;
-                            // printf("%d",brr[k][l]);
                         }
                     }//j loop
                 }// i loop
@@ -107,14 +105,14 @@ int main() {
         }//k loop
         
     
-    
+    // checking each box seperately
     for(int n=0;n<9;n++){
         for (k = m; k < m+3 ; k++) {
             for (l = c; l < c+3; l++) { 
                 for (i = m; i < m+3; i++) {
                     for (j = c; j < c+3; j++) {
                         if (brr[k][l] == brr[i][j]  && (k!=i||l!=j) && brr[k][l]!=0) {
-                            // printf("%d %d %d\n", brr[k][l],k,l);
+                         flag = false;
                         }
                     }//j loop
                 }//i loop
@@ -123,7 +121,6 @@ int main() {
         }//k loop
         c=0;
         m+=3;
-        printf("\n");
     }//m loop
     if(flag){
         printf("done");
