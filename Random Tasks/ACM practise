@@ -60,6 +60,33 @@ int main(){
     }
 }
 
+//----------------------------------------------------------------------------------
+not correct  Q4
+#include <stdio.h>
+int main() {
+    int a=0,b,n,k,odd,even;
+    scanf("%d",&n);
+    scanf("%d",&k);
+    if(k==0){
+        printf("%d",a);
+        return;
+    }
+    if(n%2==0){
+        even = n/2;
+        odd = n - even;
+    }else {
+        odd = n/2+1;
+        even = n - odd;
+    }
+    
+    if(k<=odd){
+        a = 2 * k -1;
+    }else {
+        a = 2*(k -odd) ;
+    }
+    printf("%d",a);
+}
+
 
 
 
