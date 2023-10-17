@@ -1,0 +1,58 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+int head(int n){
+    int a=1+(n-1)*4,i,j;
+    int b= a/2,c=a/2;
+    for(i=1;i<=n;i++){
+        for(j=0;j<a;j++){
+            if(j==b || j==c || i==n && (j<b||j>c)){
+                printf("*");
+            }else{
+                printf(" ");
+            }
+        }//end j loop
+        b--;
+        c++;
+        printf("\n");
+    }//end i loop
+}//end head
+
+int leg(int n){
+    int i,j,k;
+    int a=1+(n-1)*4,b=n-1,c=a/2;
+    for(i=0;i<n-1;i++){
+        for(j=0;j<a;j++){
+            if(j==b || j ==c){
+                printf("*");
+            }else{
+                printf(" ");
+            }
+        }//end j loop
+        printf("\n");
+    }//end i loop
+}//end leg
+int body(int n){
+    int i,j,k;
+    int a=1,b = ((1+(n-1)*4))-2;
+    int c= 1+(n-1)*4;
+    for(i=0;i<n-1;i++){
+        for(j=0;j<c;j++){
+            if(j==a || j==b){
+                printf("*");
+            }else{
+                printf(" ");
+            }
+        }//end j loop
+        a++;
+        b--;
+        printf("\n");
+    }//end i loop
+}//end body
+
+int main() {
+    int i ,j,k,a,b,c;
+    int n=5;
+    head(n);
+    body(n);
+    leg(n);
+}
