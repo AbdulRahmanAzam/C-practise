@@ -19,18 +19,25 @@ int head(int n){
 
 int leg(int n){
     int i,j,k;
-    int a=1+(n-1)*4,b=n-1,c=a/2;
-    for(i=0;i<n-1;i++){
-        for(j=0;j<a;j++){
-            if(j==b || j ==c){
+    int a=1+(n-1)*4,  b=n-2,c=a-4;
+    int l=a/2+1,m=a/2-1;
+    
+    for(i=0;i<=n-1;i++){
+        for(j=-1;j<=a;j++){
+            if(j==b || j ==c || j==l || j==m){
                 printf("*");
             }else{
                 printf(" ");
             }
         }//end j loop
+        b--;
+        c++;
+        l=l+2;
+        m=m-2;
         printf("\n");
     }//end i loop
 }//end leg
+
 int body(int n){
     int i,j,k;
     int a=1,b = ((1+(n-1)*4))-2;
@@ -51,7 +58,7 @@ int body(int n){
 
 int main() {
     int i ,j,k,a,b,c;
-    int n=5;
+    int n=3;
     head(n);
     body(n);
     leg(n);
