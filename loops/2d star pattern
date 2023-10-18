@@ -2,7 +2,9 @@
 #include <stdio.h>
 int head(int n){
     int a=1+(n-1)*4,i,j;
+    
     int b= a/2,c=a/2;
+    
     for(i=1;i<=n;i++){
         for(j=0;j<a;j++){
             if(j==b || j==c || i==n && (j<b||j>c)){
@@ -58,7 +60,9 @@ int body(int n){
 
 int main() {
     int i ,j,k,a,b,c;
-    int n=3;
+    int n=0;
+    printf("Enter the value of n \n");
+    scanf("%d", &n);
     head(n);
     body(n);
     leg(n);
