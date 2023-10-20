@@ -1,0 +1,40 @@
+#include <stdio.h>
+int check(int arr[100],int n){
+    int i,j;
+    for(i=0;i<=n;i++){
+        for(j=i+1;j<=n;j++){
+            if(arr[i] == arr[j]){
+                printf("%d",arr[i]);
+                return ;
+            }
+        }//end j loop
+    }//end i loop
+}
+int check2(int arr[100],int n){
+    int temp[100]={0};
+    for(int i=0;i<=n;i++){
+        if(temp[arr[i]]==1){ 
+            printf("%d",arr[i]); 
+            return ;
+        }
+        temp[arr[i]]=1;
+    }
+}
+int check3(int arr[100],int n){
+    int s=0;
+    int sum = ( n*(n+1) )/2;
+    for(int i =0;i<=n;i++){
+        s += arr[i];
+    }
+    sum = s - sum;
+    printf("%d",sum);
+    return;
+}
+int main(){
+    int a,b,c,i,j,k;
+    int arr[100] = {1,9,5,4,2,7,3,8,6,11,13,12,13,10};
+    int n=13;
+    check(arr,n);
+    check2(arr,n);
+    check3(arr,n);
+}//end main
