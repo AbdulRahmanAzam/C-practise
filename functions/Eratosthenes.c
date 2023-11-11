@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdbool.h>
 int main(){
     int n=50;
     int arr[n];
