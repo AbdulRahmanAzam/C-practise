@@ -6,7 +6,7 @@ int main(){
     // FILLING ARRAY WITH 1 TO N
     for(int i =2;i<n;i++){
         arr[i] = i;
-    }
+    } 
     arr[0] = arr[1] = false;
     
     //below is ERATOSTHENES CODE
