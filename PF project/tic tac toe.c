@@ -1,87 +1,74 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
-void tictac(char *arr){
-    for(int i=0;i<9;i++){
-        printf(" %c " ,arr[i]);
-        if(i%3 <2) printf("|");
-        if((i+1)%3==0){
-            printf("\n");
-            if(i<7) for(int j=0;j<3;j++)printf(" -- ");
-            printf("\n");
+
+#define SIZE 3
+void print_board(char board[SIZE][SIZE]){
+    for(int i=0;i<SIZE;i++){
+        for(int j=0;j<SIZE;j++){
+            printf("%c ",board[i][j]);
         }
     }
 }
-bool check(char *arr){
+bool check(char board[SIZE][SIZE]){
     int a=0;
     for(int i=0;i<9;i++){
-        if(arr[i] == 'X' || arr[i] == 'O'){
+        if(board[i] == 'X' || board[i] == 'O'){
            a++; 
         }
     }
     if(a==9) return 0;
     return 1;
 }
-char winner(char *arr){
-    if(arr[0] == arr[1] && arr[1] == arr[2]) return arr[0];
-    if(arr[3] == arr[4] && arr[4] == arr[5]) return arr[3];  
-    if(arr[6] == arr[7] && arr[7] == arr[8]) return arr[6]; 
+char winner(char board[SIZE][SIZE]){
+    if(board[0] == board[1] && board[1] == board[2]) return board[0];
+    if(board[3] == board[4] && board[4] == board[5]) return board[3];  
+    if(board[6] == board[7] && board[7] == board[8]) return board[6]; 
     
-    if(arr[0] == arr[3] && arr[3] == arr[6]) return arr[0]; 
-    if(arr[1] == arr[4] && arr[4] == arr[7]) return arr[1]; 
-    if(arr[2] == arr[5] && arr[5] == arr[8]) return arr[2]; 
+    if(board[0] == board[3] && board[3] == board[6]) return board[0]; 
+    if(board[1] == board[4] && board[4] == board[7]) return board[1]; 
+    if(board[2] == board[5] && board[5] == board[8]) return board[2]; 
     
-    if(arr[0] == arr[4] && arr[4] == arr[8]) return arr[0]; 
-    if(arr[2] == arr[4] && arr[4] == arr[6]) return arr[6]; 
+    if(board[0] == board[4] && board[4] == board[8]) return board[0]; 
+    if(board[2] == board[4] && board[4] == board[6]) return board[6]; 
     
     return 0;
     
 }
-bool posVal(char *arr, int n){
-    if(arr[n-1]!='O' && arr[n-1] != 'X') return 1;
+bool posVal(char board[SIZE][SIZE], int n){
+    if(board[n-1]!='O' && board[n-1] != 'X') return 1;
     return 0;
 }
-void multiplayer(char *arr){
+void multiplayer(char board[SIZE][SIZE]){
     int player =1;
     int pos;
     do{
-        tictac(arr);
+        print_board(board);
         printf("Turn of player %d, Enter position ",player);
         scanf("%d",&pos);
         
-        if(posVal(arr,pos)){
+        if(posVal(board,pos)){
             if(player==1){
-                arr[pos-1] = 'X';
+                board[pos-1] = 'X';
                 player++;
             }else{
-                arr[pos-1] = 'O';
+                board[pos-1] = 'O';
                 player--;
             }
              
         }else{
             printf("Enter position again \n");
         }
-        if(winner(arr)!=0) {
-            printf("Winner is %c\n", winner(arr));
+        if(winner(board)!=0) {
+            printf("Winner is %c\n", winner(board));
             return;
         }
-    }while(check(arr));
+    }while(check(board));
     printf("Game Draw \n");
     return;
 }
-int computer(char *arr){
-    if(arr[0] == arr[1] || arr[0] ==arr[2] || arr[1]==arr[2] == 'X')
-    if(arr[3] == arr[4] || arr[3] ==arr[5] || arr[4]==arr[5] == 'X')
-    if(arr[6] == arr[7] || arr[6] ==arr[8] || arr[7]==arr[8] == 'X')
-    
-    if(arr[0] == arr[3] || arr[0] ==arr[6] || arr[3]==arr[6] == 'X')
-    if(arr[1] == arr[4] || arr[1] ==arr[7] || arr[4]==arr[7] == 'X')
-    if(arr[2] == arr[5] || arr[2] ==arr[8] || arr[5]==arr[8] == 'X')
-    
-    if(arr[0] == arr[4] || arr[0] ==arr[8] || arr[4]==arr[8] == 'X')
-    if(arr[2] == arr[4] || arr[2] ==arr[6] || arr[4]==arr[8] == 'X')
-}
-void hard(char *arr){
+
+void hard(char board[SIZE][SIZE]){
     int player =1;
     int pos;
     do{
@@ -90,40 +77,46 @@ void hard(char *arr){
             scanf("%d", &pos);
             player++;
         }else{
-            pos = computer(arr);
+            pos = computer(board);
             player--;
         }
-        if(posVal(arr,pos)){
-            if()
+        if(posVal(board,pos)){
+            
         }else{
             printf("Enter position again \n");
         }
-    }while();
+    }while(1);
 }
 int main(){
-    int difficulty;
-    int game;
-    
+    int difficulty_level; // 
+    int game_mode; // to play single or multiplayer 
+    int conti; //to continue
     do{
-        char arr[] = {'1','2','3','4','5','6','7','8','9'};
+        char board[SIZE][SIZE] = {
+            {'1','2','3'},
+            {'4','5','6'},
+            {'7','8','9'}
+        };
         
         printf("Wanted to play  multiplayer or single \n Enter 1 for multiplayer and 0 for single ");
         scanf("%d",&game);    
         
         if(game){
             printf("X is for player 1 and O is for player 2\n");
-            multiplayer(arr);
+            multiplayer(board);
         }else{
             printf("Do you want to play easy or hard\n\nEnter 1 for Easy and 0 for Hard\n");
-            scanf("%d",&difficulty);
-            if(difficulty){
+            scanf("%d",&difficulty_level);
+            if(difficulty_level){
                 
             }else{
-                hard(arr);
+                hard(board);
             }
         }
-        tictac(arr);
-    
+        print_board(board);
+        
+        printf("Do you want to play again, Enter 1 to continue \n");
+        
     }while();
     
 }
