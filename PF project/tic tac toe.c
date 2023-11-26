@@ -3,30 +3,41 @@
 #include <string.h>
 
 #define SIZE 3
+
 void print_board(char board[SIZE][SIZE]){
     for(int i=0;i<SIZE;i++){
+        printf("\n");
         for(int j=0;j<SIZE;j++){
-            printf("%c ",board[i][j]);
+        
+            if(j <SIZE-1){
+                printf(" %c |",board[i][j]);
+                
+            }else {
+                printf(" %c ",board[i][j]);
+            }
+            
         }
+        printf("\n");
+        if(i<SIZE-1) for(int j=0;j<SIZE;j++) printf(" -- ");
     }
+    printf("\n");
 }
 bool check(char board[SIZE][SIZE]){
     int a=0;
-    for(int i=0;i<9;i++){
-        if(board[i] == 'X' || board[i] == 'O'){
-           a++; 
+    for(int i=0;i<SIZE;i++){
+        for(int j=0;j<SIZE;j++){
+            if(board[i][j] == 'X' || board[i][j] == 'O'){
+               a++; 
+            }    
         }
     }
     if(a==9) return 0;
     return 1;
 }
 char winner(char board[SIZE][SIZE]){
-    if(board[0] == board[1] && board[1] == board[2]) return board[0];
-    if(board[3] == board[4] && board[4] == board[5]) return board[3];  
-    if(board[6] == board[7] && board[7] == board[8]) return board[6];
     for(int i=0;i<3;i++){
-            if(board[0][i]==board[1][i] && board[1][i]==board[2][i] ) return board[0][i];//for column
-            if(board[i][0]==board[i][1] && board[i][1]==board[i][2]) return board[i][0];//for row
+        if(board[0][i]==board[1][i] && board[1][i]==board[2][i] ) return board[0][i];//for column
+        if(board[i][0]==board[i][1] && board[i][1]==board[i][2]) return board[i][0];//for row
     }
     
     //for diagonals
@@ -41,7 +52,7 @@ bool pos_Validate(char board[SIZE][SIZE], int row, int col){
     return 0;
 }
 void multiplayer(char board[SIZE][SIZE]){
-    char player;
+    char player = 'X';
     int move;
     int row;
     int col;
@@ -74,16 +85,21 @@ void multiplayer(char board[SIZE][SIZE]){
 
 void hard(char board[SIZE][SIZE]){
     int player =1;
-    int pos;
+    int move;
+    int row;
+    int col;
     do{
         if(player == 'X'){
             printf("Enter position ");
-            scanf("%d", &pos);
+            scanf("%d", &move);
         }else if(player == 'O'){
-            pos = minimax(board);
+            // move = minimax(board);
         }
+        row = (move - 1) / 3;   
+        col = (move - 1) % 3;
+    
         
-        if(pos_Validate(board,pos)){
+        if(pos_Validate(board,row,col)){
             
         }else{
             printf("Enter position again \n");
@@ -102,9 +118,9 @@ int main(){
         };
         
         printf("Wanted to play  multiplayer or single \n Enter 1 for multiplayer and 0 for single ");
-        scanf("%d",&game);    
+        scanf("%d",&game_mode);    
         
-        if(game){
+        if(game_mode){
             printf("X is for player 1 and O is for player 2\n");
             multiplayer(board);
         }else{
